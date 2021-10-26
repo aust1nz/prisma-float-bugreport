@@ -45,6 +45,8 @@ const insert = async () => {
     VALUES (${employees[2].title}, ${employees[2].salary}, ${employees[2].fte});
   `;
 
+  // This throws an error
+  // Raw query failed. Code: `22P03`. Message: `db error: ERROR: incorrect binary data format in bind parameter 3`
   await prisma.$executeRaw`
     INSERT INTO "Employee"
                 (title, salary, "fteAlternate")
